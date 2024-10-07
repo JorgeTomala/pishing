@@ -1,134 +1,274 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protege tu Identidad Digital: Guía contra el Phishing</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #007BFF;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2em;
-        }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        section {
-            margin-bottom: 20px;
-        }
-        section h2 {
-            color: #007BFF;
-            border-bottom: 2px solid #007BFF;
-            padding-bottom: 10px;
-        }
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        ul li {
-            background-color: #f4f4f4;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 4px;
-            border-left: 4px solid #007BFF;
-        }
-        ul li:hover {
-            background-color: #e2e2e2;
-        }
-        footer {
-            background-color: #007BFF;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            border-top: 1px solid #0066cc;
-        }
-        footer p {
-            margin: 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protege tu Identidad Digital: Guía contra el Phishing</title>
+  <style>
+    /* Estilos generales para la página */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* Oculta el scroll horizontal */
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+      margin: 20px auto;
+      background-color: #fff;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      max-width: 800px;
+      transition: box-shadow 0.3s;
+    }
+
+    main:hover {
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos para las pestañas */
+    .tab {
+      display: flex;
+      justify-content: space-around;
+      border-bottom: 2px solid #007BFF;
+      margin-bottom: 20px;
+    }
+
+    .tab button {
+      flex: 1;
+      background-color: inherit;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 15px 0;
+      transition: background-color 0.3s, color 0.3s;
+      font-size: 18px;
+      text-align: center;
+      border-radius: 5px 5px 0 0;
+    }
+
+    .tab button:hover {
+      background-color: #0056b3;
+      color: white;
+    }
+
+    .tab button.active {
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* Contenido de cada pestaña */
+    .tabcontent {
+      display: none;
+      flex-direction: column;
+      padding: 20px;
+      border-top: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    section {
+      margin-bottom: 20px;
+    }
+
+    section h2 {
+      color: #007BFF;
+    }
+
+    /* Estilos para el footer */
+    footer {
+      background-color: #007BFF;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    /* Estilo de listas */
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      background: #e9ecef;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    li:hover {
+      background: #d1d1d1;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Protege tu Identidad Digital: Guía contra el Phishing</h1>
-    </header>
 
-    <main>
-        <section>
-            <h2>¿Qué es el Phishing?</h2>
-            <p>El phishing es una táctica utilizada por ciberdelincuentes para engañar a las personas y hacer que compartan información personal, contraseñas o datos bancarios. Los atacantes se hacen pasar por entidades legítimas a través de correos electrónicos, mensajes de texto o sitios web falsos.</p>
-        </section>
+<header>
+  <h1>Protege tu Identidad Digital</h1>
+</header>
 
-        <section>
-            <h2>Ejemplos Comunes de Phishing</h2>
-            <ul>
-                <li>Correos electrónicos que parecen ser de tu proveedor de servicios, solicitando que verifiques tu cuenta.</li>
-                <li>Mensajes de texto que afirman que has ganado un premio y piden que hagas clic en un enlace para reclamarlo.</li>
-                <li>Páginas web que imitan sitios populares como redes sociales o servicios en línea, solicitando tus credenciales de inicio de sesión.</li>
-            </ul>
-        </section>
+<main>
+  <!-- Pestañas -->
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Informacion')" id="defaultOpen">Información</button>
+    <button class="tablinks" onclick="openTab(event, 'Ejemplos')">Ejemplos o Guías</button>
+    <button class="tablinks" onclick="openTab(event, 'Recomendaciones')">Recomendaciones</button>
+  </div>
 
-        <section>
-            <h2>¿Cómo Detectar un Intento de Phishing?</h2>
-            <ul>
-                <li><strong>Verifica el remitente:</strong> Revisa cuidadosamente la dirección de correo o el número del remitente. Si parece sospechoso o desconocido, desconfía.</li>
-                <li><strong>Inspecciona los enlaces:</strong> Pasa el cursor sobre los enlaces para ver la URL completa antes de hacer clic. Si no coincide con la dirección oficial, no interactúes.</li>
-                <li><strong>Cuidado con la urgencia:</strong> Los mensajes que te presionan para actuar rápidamente suelen ser intentos de phishing.</li>
-                <li><strong>Errores de gramática y ortografía:</strong> Correos mal redactados pueden ser indicativos de un intento de fraude.</li>
-            </ul>
-        </section>
+  <!-- Contenido de cada pestaña -->
+  <div id="Informacion" class="tabcontent">
+    <section>
+      <h2>¿Qué es el Phishing?</h2>
+      <p>El phishing es una táctica utilizada por ciberdelincuentes para engañar a las personas y hacer que compartan información personal, contraseñas o datos bancarios. Los atacantes se hacen pasar por entidades legítimas a través de correos electrónicos, mensajes de texto o sitios web falsos.</p>
+    </section>
 
-        <section>
-            <h2>¿Consejos para Mantenerte Seguro?</h2>
-            <ul>
-                <li><strong>No compartas información sensible:</strong> Nunca des contraseñas, números de tarjetas, o datos personales en respuesta a un correo o mensaje no solicitado.</li>
-                <li><strong>Habilita la autenticación en dos pasos (2FA):</strong> Agrega una capa extra de seguridad a tus cuentas para protegerlas incluso si tu contraseña es comprometida.</li>
-                <li><strong>Mantén tu software actualizado:</strong> Asegúrate de que tu sistema operativo, navegadores y aplicaciones tengan las últimas actualizaciones de seguridad.</li>
-                <li><strong>Utiliza un antivirus confiable:</strong> Protege tu dispositivo con software de seguridad que pueda detectar y bloquear intentos de phishing.</li>
-            </ul>
-        </section>
+    <section>
+      <h2>Ejemplos Comunes de Phishing</h2>
+      <ul>
+        <li>Correos electrónicos que parecen ser de tu proveedor de servicios, solicitando que verifiques tu cuenta.</li>
+        <li>Mensajes de texto que afirman que has ganado un premio y piden que hagas clic en un enlace para reclamarlo.</li>
+        <li>Páginas web que imitan sitios populares como redes sociales o servicios en línea, solicitando tus credenciales de inicio de sesión.</li>
+      </ul>
+    </section>
 
-        <section>
-            <h2>¿Qué Hacer si Encuentras un Intento de Phishing?</h2>
-            <ul>
-                <li><strong>No interactúes:</strong> No respondas ni hagas clic en enlaces o archivos adjuntos sospechosos.</li>
-                <li><strong>Reporta el incidente:</strong> Notifica a la entidad legítima o a tu equipo de seguridad informática sobre el intento de phishing.</li>
-                <li><strong>Elimina el mensaje:</strong> Después de reportarlo, borra el mensaje de tu bandeja de entrada para evitar futuros riesgos.</li>
-                <li><strong>Cambia tus contraseñas:</strong> Si has proporcionado información personal, actualiza tus contraseñas de inmediato.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Enlaces de interés</h2>
-            <ul>
-                <li><strong>Desconfias de un enlace:</strong><a href="https://www.virustotal.com/gui/home/url">Virus Total</a></li>
-                <li><strong>Desconfias de un número que te escribe:</strong><a href="https://www.truecaller.com/es-la">Truecaller</a></li>
-            </ul>
-        </section>
-        <section>
-            <h2>Guías</h2>
-            <p>PENDIENTE AGREGAR MÁS INFO EN DESARROLLO</p>
-        </section>
-    </main>
+    <section>
+      <h2>¿Cómo Detectar un Intento de Phishing?</h2>
+      <ul>
+        <li><strong>Verifica el remitente:</strong> Revisa cuidadosamente la dirección de correo o el número del remitente. Si parece sospechoso o desconocido, desconfía.</li>
+        <li><strong>Inspecciona los enlaces:</strong> Pasa el cursor sobre los enlaces para ver la URL completa antes de hacer clic. Si no coincide con la dirección oficial, no interactúes.</li>
+        <li><strong>Cuidado con la urgencia:</strong> Los mensajes que te presionan para actuar rápidamente suelen ser intentos de phishing.</li>
+        <li><strong>Errores de gramática y ortografía:</strong> Correos mal redactados pueden ser indicativos de un intento de fraude.</li>
+      </ul>
+    </section>
+  </div>
 
-    <footer>
-        <p>© 2024 Universidad Estatal Península de Santa Elena | Jorge Tomalá</p>
-    </footer>
+  <div id="Ejemplos" class="tabcontent">
+    <section>
+      <h2>Ejemplo de Smishing con Truecaller</h2>
+      <p>El Smishing es un tipo de phishing que se realiza mediante mensajes de texto. Al recibir un mensaje sospechoso, es importante verificar el remitente. Por ejemplo, los primeros dígitos suelen indicar el país de origen. Los mensajes de smishing generalmente intentan presionarte, indicando acciones negativas como bloquear tu cuenta o perder un paquete.</p>
+      <img src="img/smishing.png" alt="Ejemplo de smishing" style="max-width:100%; margin:10px 0;">
+      <p>Para analizar el remitente, puedes usar la herramienta de <a href="https://www.truecaller.com/es-la" target="_blank">Truecaller</a> para colocar el número y verificar su origen. Esta herramienta también permite reportar el número como spam, lo que ayuda a otros usuarios.</p>
+      <img src="img/truecaller.png" alt="Ejemplo de truecaller" style="max-width:100%; margin:10px 0;">
+    </section>
+
+    <section>
+      <h2>Ejemplo de uso de VirusTotal: Análisis de enlaces</h2>
+      <p>Si el mensaje contiene un enlace, evita abrirlo. En caso de haberlo abierto por error, cierra el enlace inmediatamente y no ingreses información. Copia el enlace sospechoso y utiliza la herramienta web <a href="https://www.virustotal.com/gui/home/url" target="_blank">VirusTotal</a> para analizar su seguridad. Solo coloca la URL en el campo de análisis y espera el reporte.</p>
+      <img src="img/virustotal.png" alt="Ejemplo de uso de VirusTotal" style="max-width:100%; margin:10px 0;">
+      <p>Una vez finalizado el análisis, se muestra un reporte que, si la URL es peligrosa, aparecerá en color rojo indicando que contiene Phishing.</p>
+      <img src="img/resultado_virustotal.png" alt="Resultado del análisis en VirusTotal" style="max-width:100%; margin:10px 0;">
+    </section>
+
+    <section>
+      <h2>Verificación de Correos Comprometidos con Have I Been Pwned</h2>
+      <p>Para saber si tu correo ha sido comprometido en una brecha de datos, usa <a href="https://haveibeenpwned.com/" target="_blank">Have I Been Pwned</a>. Introduce tu correo y revisa si aparece en alguna filtración.</p>
+      <img src="img/haveibeenpwned.png" alt="Ejemplo de uso de Have I Been Pwned" style="max-width:100%; margin:10px 0;">
+      <p>En caso afirmativo, cambia tus contraseñas y habilita la autenticación en dos pasos.</p>
+      <img src="img/resultado_haveibeenpwned.png" alt="Resultado del análisis en Have I Been Pwned" style="max-width:100%; margin:10px 0;">
+    </section>
+
+    <section>
+      <h2>Identificación de Sitios Falsos</h2>
+      <p>Una de las técnicas más comunes de los ciberdelincuentes es crear sitios web falsos que se parecen al sitio oficial de Facebook para capturar credenciales. Estos sitios suelen tener pequeñas diferencias en la URL o en la apariencia que son difíciles de detectar si no se presta atención. A continuación, te mostramos cómo reconocer estos sitios falsos:</p>
+      <ul>
+        <li><strong>Revisa la URL:</strong> Asegúrate de que la URL del sitio sea <code>https://www.facebook.com</code>. Cualquier variación, como <code>https://faceboook-login.com</code> o <code>https://login-facebook.net</code>, es sospechosa. Los sitios falsos a menudo incluyen ligeros cambios en las letras o palabras adicionales.</li>
+        <li><strong>Verifica el candado de seguridad:</strong> Un sitio legítimo debe mostrar un ícono de candado en la barra de direcciones y empezar con <code>https://</code>. Aunque algunos sitios falsos pueden tener el candado, siempre es importante corroborar la URL completa.</li>
+        <li><strong>Observa la apariencia:</strong> Los sitios falsos a veces tienen elementos que no se cargan bien o se ven desalineados. Si notas que algo no se ve bien, cierra la página de inmediato.</li>
+      </ul>
+      <img src="img/web_clonada.png" alt="Ejemplo de identificación de sitio falso de Facebook" style="max-width:100%; margin:10px 0;">
+    </section>
+  </div>
+
+
+  <div id="Recomendaciones" class="tabcontent">
+    <section>
+      <h2>¿Consejos para Mantenerte Seguro?</h2>
+      <ul>
+        <li><strong>No compartas información sensible:</strong> Nunca des contraseñas, números de tarjetas, o datos personales en respuesta a un correo o mensaje no solicitado.</li>
+        <li><strong>Habilita la autenticación en dos pasos (2FA):</strong> Agrega una capa extra de seguridad a tus cuentas para protegerlas incluso si tu contraseña es comprometida.</li>
+        <li><strong>Mantén tu software actualizado:</strong> Asegúrate de que tu sistema operativo, navegadores y aplicaciones tengan las últimas actualizaciones de seguridad.</li>
+        <li><strong>Utiliza un antivirus confiable:</strong> Protege tu dispositivo con software de seguridad que pueda detectar y bloquear intentos de phishing.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>¿Qué Hacer si Encuentras un Intento de Phishing?</h2>
+      <ul>
+        <li><strong>No interactúes:</strong> No respondas ni hagas clic en enlaces o archivos adjuntos sospechosos.</li>
+        <li><strong>Reporta el incidente:</strong> Notifica a la entidad legítima o a tu equipo de seguridad informática sobre el intento de phishing.</li>
+        <li><strong>Elimina el mensaje:</strong> Después de reportarlo, borra el mensaje de tu bandeja de entrada para evitar futuros riesgos.</li>
+        <li><strong>Cambia tus contraseñas:</strong> Si has proporcionado información personal, actualiza tus contraseñas de inmediato.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2024 Universidad Estatal Península de Santa Elena | Jorge</p>
+</footer>
+
+<script>
+  // Función para abrir las pestañas
+  function openTab(evt, tabName) {
+    // Obtener todos los elementos con la clase "tabcontent" y ocultarlos
+    var tabcontent = document.getElementsByClassName("tabcontent");
+    for (var i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Obtener todos los elementos con la clase "tablinks" y quitarles la clase "active"
+    var tablinks = document.getElementsByClassName("tablinks");
+    for (var i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Mostrar la pestaña actual y agregar la clase "active" al botón que la abre
+    document.getElementById(tabName).style.display = "flex";
+    evt.currentTarget.className += " active";
+  }
+
+  // Abrir la pestaña por defecto
+  document.getElementById("defaultOpen").click();
+</script>
+
 </body>
 </html>
